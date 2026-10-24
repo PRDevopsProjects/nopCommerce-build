@@ -16,12 +16,12 @@ pipeline{
    stages{
      stage('Git_URL'){
         steps{
-           git branch: 'develop', url: 'https://github.com/nopSolutions/nopCommerce.git'              
+           git branch: 'develop', url: 'https://github.com/PRDevopsProjects/nopCommerce-build.git'              
              }
         }
      stage('Build'){
         steps{
-           sh 'cd /home/ubuntu/NOP/workspace/Nop_Declarativepipeline_job'
+           sh 'cd /home/ubuntu/NOP/workspace/Nop_Declarativepipeline_job(SCM)'
            sh 'mkdir -p ~/publish'
            sh 'dotnet publish -c Release src/Presentation/Nop.Web -o ~/publish/'
 
