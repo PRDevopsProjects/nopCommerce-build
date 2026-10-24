@@ -1,0 +1,31 @@
+pipeline{
+   agent{
+       label 'Agent-NOP'
+        }
+//   environment{
+//         DOTNET_ROOT = '/home/ubuntu/.dotnet'
+//         PATH = "/home/ubuntu/.dotnet:${env.PATH}"
+//         }
+//    tools {
+//        dotnetsdk 'Dotnet-10'
+//    }
+       
+   triggers{
+        cron('H */4 * * 1-5')
+           }
+   stages{
+     stage('Git_URL'){
+        steps{
+           git branch: 'develop', url: 'https://github.com/nopSolutions/nopCommerce.git'              
+             }
+        }
+     stage('Build'){
+        steps{
+           sh 'cd /home/ubuntu/NOP/workspace/Nop_Declarativepipeline_job'
+           sh 'mkdir -p ~/publish'
+           sh 'dotnet publish -c Release src/Presentation/Nop.Web -o ~/publish/'
+
+             }
+        }  
+   }
+}
