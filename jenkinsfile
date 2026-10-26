@@ -31,15 +31,14 @@ pipeline{
    }
       post{
         success{
-
-
+          ws('/home/ubuntu') {
             zip archive: true, 
             defaultExcludes: false, 
-            dir: 'publish',
-            exclude: '', glob: '', 
+            dir: 'publish', 
             overwrite: true, 
             zipFile: 'Nop.Web'
-
+           
+          }
          }
       } 
    
