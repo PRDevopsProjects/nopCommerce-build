@@ -31,7 +31,7 @@ pipeline{
            success{
               zip zipFile: 'nop.web.zip',
               archive: true,
-              dir: '~/published',
+              dir: '~/publish',
               overwrite: true
 
          }
