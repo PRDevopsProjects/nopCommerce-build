@@ -26,6 +26,15 @@ pipeline{
            sh 'dotnet publish -c Release src/Presentation/Nop.Web -o ~/publish/'
 
              }
-        }  
+         }
+      post{
+         succes{
+             zip zipFile: 'nop.web.zip',
+             archive: true,
+             dir: '~/published',
+             overwrite: true
+
+         }
+      } 
    }
 }
