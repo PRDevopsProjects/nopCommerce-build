@@ -27,6 +27,8 @@ pipeline{
 
              }
          }
+
+   }
       post{
         success{
            zip zipFile: 'nop.web.zip',
@@ -36,5 +38,5 @@ pipeline{
 
          }
       } 
-   }
+   
 }
