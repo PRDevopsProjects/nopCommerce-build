@@ -29,18 +29,18 @@ pipeline{
          }
 
    }
-      // post{
-      //   success{
+      post{
+        success{
 
 
-      //       zip archive: true, 
-      //       defaultExcludes: false, 
-      //       dir: 'publish',
-      //       exclude: '', glob: '', 
-      //       overwrite: true, 
-      //       zipFile: 'Nop.Web'
+            zip archive: true, 
+            defaultExcludes: false, 
+            dir: 'publish',
+            exclude: '', glob: '', 
+            overwrite: true, 
+            zipFile: 'Nop.Web'
 
-      //    }
-      // } 
+         }
+      } 
    
 }
